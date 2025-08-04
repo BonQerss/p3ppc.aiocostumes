@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36301.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "p3ppc.aiocostumes", "p3ppc.aiocostumes\p3ppc.aiocostumes.csproj", "{141D6DB5-43DB-48E9-852E-504817EB7D76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAK.Stream.Emulator.Interfaces", "Interfaces\FileEmulationFramework\Emulator\Interfaces\PAK.Stream.Emulator.Interfaces\PAK.Stream.Emulator.Interfaces.csproj", "{76D2B5C9-36C9-CA84-FF74-7F72AC173D59}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{141D6DB5-43DB-48E9-852E-504817EB7D76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{141D6DB5-43DB-48E9-852E-504817EB7D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{141D6DB5-43DB-48E9-852E-504817EB7D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{141D6DB5-43DB-48E9-852E-504817EB7D76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76D2B5C9-36C9-CA84-FF74-7F72AC173D59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76D2B5C9-36C9-CA84-FF74-7F72AC173D59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76D2B5C9-36C9-CA84-FF74-7F72AC173D59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76D2B5C9-36C9-CA84-FF74-7F72AC173D59}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59B853EE-63A5-44B2-A58E-FD1D0A354423}
+	EndGlobalSection
+EndGlobal
