@@ -493,23 +493,14 @@ namespace p3ppc.aiocostumes
 
             foreach (var variant in fileVariants)
             {
-                string filePrefix = $"{baseFileName}{variant}"; // e.g., "bc002_c1"
-                string gmoPath = Path.Combine(basePath, $"{filePrefix}.GMO");
+                string filePath = Path.Combine(basePath, $"{baseFileName}.GMO");
+                string pacFile = $"{baseFileName}{variant}.pac";
+                string aPacFile = $"{baseFileName}a{variant}.pac";
 
-                // Main pack (e.g., bc002_c1.pac) containing bc002_c1.GMO
-                string pacPath1 = $"model/pack/{filePrefix}.pac";
-                string internalPath1 = $"{filePrefix}.GMO";
-                pakEmulator.AddFile(gmoPath, pacPath1, $"{pacPath1}/{internalPath1}");
-
-                // Alt pack (e.g., bc002a_c1.pac) also containing bc002_c1.GMO
-                string pacPath2 = $"model/pack/{baseFileName}a{variant}.pac";
-                pakEmulator.AddFile(gmoPath, pacPath2, $"{pacPath2}/{internalPath1}");
+                pakEmulator.AddFile(filePath, $"model/pack/{pacFile}", $"{baseFileName}.GMO");
+                pakEmulator.AddFile(filePath, $"model/pack/{aPacFile}", $"{baseFileName}.GMO");
             }
         }
-
-
-
-
 
         #region Standard Overrides
         public override void ConfigurationUpdated(Config configuration)
