@@ -54,12 +54,26 @@ namespace p3ppc.aiocostumes
             var PakEmulatorController = _modLoader.GetController<IPakEmulator>();
             if (PakEmulatorController == null || !PakEmulatorController.TryGetTarget(out var _PakEmulator))
             {
-                _logger.WriteLine($"PakEmulatorController returned as null! Files won't load! If you complain and then I find this in your log I'm gonna come to your house and eat your cereal!", System.Drawing.Color.Red);
+                _logger.WriteLine($"PakEmulatorController returned as null! Files won't load!", System.Drawing.Color.Red);
                 return;
             }
 
+            _logger.WriteLine($"[DEBUG] PAK Emulator found and initialized successfully");
+            _logger.WriteLine($"[DEBUG] PAK Emulator type: {_PakEmulator.GetType().Name}");
+
             var modDir = _modLoader.GetDirectoryForModId(_modConfig.ModId);
 
+            // After getting the PAK emulator, add this debug
+            var pakFiles = _PakEmulator.GetEmulatorInput();
+            _logger.WriteLine($"[DEBUG] PAK Emulator has {pakFiles.Length} route groups:");
+            foreach (var route in pakFiles)
+            {
+                _logger.WriteLine($"[DEBUG] Route: {route.Route}");
+                if (route.Route.Contains("model") || route.Route.Contains("pack"))
+                {
+                    _logger.WriteLine($"[DEBUG] *** Model/Pack route found: {route.Route} ***");
+                }
+            }
 
 
             Config.MakotoCostume costumeChar1;
@@ -209,7 +223,9 @@ namespace p3ppc.aiocostumes
 
 
 
-
+            // figure out kotone later
+            // currently doesn't bind second phantom thief outfit due to how poorly this is written
+            // probably just need to structure it like how persona outfits are strcutured
             if (costumeChar2 != Config.KotoneCostume.None)
             {
                 string costumeFolder = costumeChar2 switch
@@ -490,17 +506,61 @@ namespace p3ppc.aiocostumes
         private void AddCharacterFiles(IPakEmulator pakEmulator, string modDir, string characterName, string costumeName, string baseFileName, string[] fileVariants)
         {
             string basePath = Path.Combine(modDir, costumeName, characterName);
+            string sourceGmoPath = Path.Combine(basePath, $"{baseFileName}.GMO");
+
+            _logger.WriteLine($"[DEBUG] Character: {characterName}, Costume: {costumeName}, BaseFile: {baseFileName}");
+            _logger.WriteLine($"[DEBUG] SourceGMO: {sourceGmoPath}");
+            _logger.WriteLine($"[DEBUG] Variants: [{string.Join(", ", fileVariants)}]");
+
+            if (!File.Exists(sourceGmoPath))
+            {
+                _logger.WriteLine($"[ERROR] Source GMO file not found: {sourceGmoPath}", System.Drawing.Color.Red);
+                return;
+            }
 
             foreach (var variant in fileVariants)
             {
-                string filePath = Path.Combine(basePath, $"{baseFileName}.GMO");
                 string pacFile = $"{baseFileName}{variant}.pac";
                 string aPacFile = $"{baseFileName}a{variant}.pac";
+                string gmoInsidePac = variant == "" ? $"{baseFileName}.GMO" : $"{baseFileName}{variant}.GMO";
 
-                pakEmulator.AddFile(filePath, $"model/pack/{pacFile}", $"{baseFileName}.GMO");
-                pakEmulator.AddFile(filePath, $"model/pack/{aPacFile}", $"{baseFileName}.GMO");
+                _logger.WriteLine($"[DEBUG] Processing variant: '{variant}'");
+                _logger.WriteLine($"[DEBUG] Target PAC: {pacFile}, replacing internal GMO: {gmoInsidePac}");
+
+                // Try multiple route formats to see what works
+                string[] routesToTry = {
+            $"model\\pack",           // Windows style backslash
+            $"model/pack",            // idfk just do anything i guess
+            $"pack",                 
+            $"data\\model\\pack"     
+        };
+
+                bool addedSuccessfully = false;
+                foreach (string routeToTry in routesToTry)
+                {
+                    try
+                    {
+                        _logger.WriteLine($"[DEBUG] Trying route: {routeToTry}\\{pacFile}");
+                        pakEmulator.AddFile(sourceGmoPath, $"{routeToTry}\\{pacFile}", gmoInsidePac);
+                        pakEmulator.AddFile(sourceGmoPath, $"{routeToTry}\\{aPacFile}", gmoInsidePac);
+
+                        _logger.WriteLine($"[DEBUG] SUCCESS: Added to route {routeToTry}");
+                        addedSuccessfully = true;
+                        break;
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.WriteLine($"[DEBUG] Route {routeToTry} failed: {ex.Message}");
+                    }
+                }
+
+                if (!addedSuccessfully)
+                {
+                    _logger.WriteLine($"[ERROR] Failed to add {pacFile} to any route!", System.Drawing.Color.Red);
+                }
             }
         }
+
 
         #region Standard Overrides
         public override void ConfigurationUpdated(Config configuration)
