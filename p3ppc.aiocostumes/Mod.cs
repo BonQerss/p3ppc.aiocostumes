@@ -503,8 +503,7 @@ namespace p3ppc.aiocostumes
             return values[rng.Next(values.Length)];
         }
 
-        private void AddCharacterFiles(IPakEmulator pakEmulator, string modDir,
-    string characterName, string costumeFolder, string baseFileName, string[] fileVariants)
+        private void AddCharacterFiles(IPakEmulator pakEmulator, string modDir, string characterName, string costumeFolder, string baseFileName, string[] fileVariants)
         {
             string gmoPath = Path.Combine(modDir, costumeFolder, characterName, $"{baseFileName}.GMO");
             _logger.WriteLine($"[INFO] Looking for GMO file at: {gmoPath}");
@@ -519,25 +518,49 @@ namespace p3ppc.aiocostumes
 
             foreach (var variant in fileVariants)
             {
-                string route = $@"model\pack\{baseFileName}{variant}.pac";
-                string virtualPath = Path.GetFileName(route); // e.g. "bc009_c6.pac"
+                // Add base pac (e.g. bc009.pac or bc009c6.pac)
+                string basePacName = $"{baseFileName}{variant}.pac";
+                string baseRoute = $@"model\pack\{basePacName}";
+                string virtualPath = $"{baseFileName}.GMO";
 
-                _logger.WriteLine($"[INFO] Attempting to add file:");
+                _logger.WriteLine($"[INFO] Adding to base PAC:");
                 _logger.WriteLine($"       Physical path: {gmoPath}");
-                _logger.WriteLine($"       Route: {route}");
-                _logger.WriteLine($"       Virtual path in pak: {virtualPath}");
+                _logger.WriteLine($"       Route: {baseRoute}");
+                _logger.WriteLine($"       Virtual path: {virtualPath}");
 
                 try
                 {
-                    pakEmulator.AddFile(gmoPath, route, virtualPath);
-                    _logger.WriteLine($"[SUCCESS] Registered {route}", System.Drawing.Color.Green);
+                    pakEmulator.AddFile(gmoPath, baseRoute, virtualPath);
+                    _logger.WriteLine($"[SUCCESS] Registered {baseRoute}", System.Drawing.Color.Green);
                 }
                 catch (Exception ex)
                 {
-                    _logger.WriteLine($"[ERROR] Failed to register {route}: {ex.Message}", System.Drawing.Color.Red);
+                    _logger.WriteLine($"[ERROR] Failed to register {baseRoute}: {ex.Message}", System.Drawing.Color.Red);
+                }
+
+                // Add awakening pac (e.g. bc009a.pac or bc009c6a.pac)
+                string awakeningPacName = $"{baseFileName}{variant}a.pac";
+                string awakeningRoute = $@"model\pack\{awakeningPacName}";
+
+                _logger.WriteLine($"[INFO] Adding to awakening PAC:");
+                _logger.WriteLine($"       Physical path: {gmoPath}");
+                _logger.WriteLine($"       Route: {awakeningRoute}");
+                _logger.WriteLine($"       Virtual path: {virtualPath}");
+
+                try
+                {
+                    pakEmulator.AddFile(gmoPath, awakeningRoute, virtualPath);
+                    _logger.WriteLine($"[SUCCESS] Registered {awakeningRoute}", System.Drawing.Color.Green);
+                }
+                catch (Exception ex)
+                {
+                    _logger.WriteLine($"[ERROR] Failed to register {awakeningRoute}: {ex.Message}", System.Drawing.Color.Red);
                 }
             }
         }
+
+
+
 
 
 
