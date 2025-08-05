@@ -208,7 +208,7 @@ namespace p3ppc.aiocostumes
                     Config.MakotoCostumeSlot.bc001_c2 => new[] { "_c2" },
                     Config.MakotoCostumeSlot.bc001_c5 => new[] { "_c5" },
                     Config.MakotoCostumeSlot.bc001_c9 => new[] { "_c9" },
-                    _ => Array.Empty<string>()
+                    _ => new[] { "" }
                 };
 
                 if (!string.IsNullOrEmpty(costumeFolder) && variants.Length > 0)
@@ -250,7 +250,7 @@ namespace p3ppc.aiocostumes
                     Config.KotoneCostumeSlot.bc063_c3 => new[] { "_c3" },
                     Config.KotoneCostumeSlot.bc063_c5 => new[] { "_c5" },
                     Config.KotoneCostumeSlot.bc063_c9 => new[] { "_c9" },
-                    _ => Array.Empty<string>()
+                    _ => new[] { "" }
                 };
 
                 if (!string.IsNullOrEmpty(costumeFolder) && variants.Length > 0)
@@ -283,7 +283,7 @@ namespace p3ppc.aiocostumes
                     Config.YukariCostumeSlot.bc002_c3 => new[] { "_c3" },
                     Config.YukariCostumeSlot.bc002_c5 => new[] { "_c5" },
                     Config.YukariCostumeSlot.bc002_c6 => new[] { "_c6" },
-                    _ => Array.Empty<string>()
+                    _ => new[] { "" } // default to base pac
                 };
 
                 if (!string.IsNullOrEmpty(costumeFolder) && variants.Length > 0)
@@ -313,7 +313,7 @@ namespace p3ppc.aiocostumes
                     Config.JunpeiCostumeSlot.bc005_c2 => new[] { "_c2" },
                     Config.JunpeiCostumeSlot.bc005_c5 => new[] { "_c5" },
                     Config.JunpeiCostumeSlot.bc005_c6 => new[] { "_c6" },
-                    _ => Array.Empty<string>()
+                    _ => new[] { "" } // default to base pac
                 };
 
                 if (!string.IsNullOrEmpty(costumeFolder) && variants.Length > 0)
@@ -343,7 +343,7 @@ namespace p3ppc.aiocostumes
                     Config.AkihikoCostumeSlot.bc007_c2 => new[] { "_c2" },
                     Config.AkihikoCostumeSlot.bc007_c5 => new[] { "_c5" },
                     Config.AkihikoCostumeSlot.bc007_c6 => new[] { "_c6" },
-                    _ => Array.Empty<string>()
+                    _ => new[] { "" } // default to base pac
                 };
 
                 if (!string.IsNullOrEmpty(costumeFolder) && variants.Length > 0)
@@ -376,7 +376,7 @@ namespace p3ppc.aiocostumes
                     Config.MitsuruCostumeSlot.bc004_c3 => new[] { "_c3" },
                     Config.MitsuruCostumeSlot.bc004_c5 => new[] { "_c5" },
                     Config.MitsuruCostumeSlot.bc004_c6 => new[] { "_c6" },
-                    _ => Array.Empty<string>()
+                    _ => new[] { "" } // default to base pac
                 };
 
                 if (!string.IsNullOrEmpty(costumeFolder) && variants.Length > 0)
@@ -405,7 +405,7 @@ namespace p3ppc.aiocostumes
                     Config.AigisCostumeSlot.bc003_c3 => new[] { "_c3" },
                     Config.AigisCostumeSlot.bc003_c4 => new[] { "_c4" },
                     Config.AigisCostumeSlot.bc003_c6 => new[] { "_c6" },
-                    _ => Array.Empty<string>()
+                    _ => new[] { "" } // default to base pac
                 };
 
                 if (!string.IsNullOrEmpty(costumeFolder) && variants.Length > 0)
@@ -434,7 +434,7 @@ namespace p3ppc.aiocostumes
                     Config.KenCostumeSlot.bc008_c2 => new[] { "_c2" },
                     Config.KenCostumeSlot.bc008_c5 => new[] { "_c5" },
                     Config.KenCostumeSlot.bc008_c6 => new[] { "_c6" },
-                    _ => Array.Empty<string>()
+                    _ => new[] { "" } // default to base pac
                 };
 
                 if (!string.IsNullOrEmpty(costumeFolder) && variants.Length > 0)
@@ -503,74 +503,48 @@ namespace p3ppc.aiocostumes
             return values[rng.Next(values.Length)];
         }
 
-        private void AddCharacterFiles(IPakEmulator pakEmulator, string modDir, string characterName, string costumeName, string baseFileName, string[] fileVariants)
+        private void AddCharacterFiles(IPakEmulator pakEmulator, string modDir,
+    string characterName, string costumeFolder, string baseFileName, string[] fileVariants)
         {
-            string basePath = Path.Combine(modDir, costumeName, characterName);
-            string sourceGmoPath = Path.Combine(basePath, $"{baseFileName}.GMO");
+            string gmoPath = Path.Combine(modDir, costumeFolder, characterName, $"{baseFileName}.GMO");
+            _logger.WriteLine($"[INFO] Looking for GMO file at: {gmoPath}");
 
-            _logger.WriteLine($"[DEBUG] Character: {characterName}, Costume: {costumeName}, BaseFile: {baseFileName}");
-            _logger.WriteLine($"[DEBUG] SourceGMO: {sourceGmoPath}");
-            _logger.WriteLine($"[DEBUG] Variants: [{string.Join(", ", fileVariants)}]");
-
-            if (!File.Exists(sourceGmoPath))
+            if (!File.Exists(gmoPath))
             {
-                _logger.WriteLine($"[ERROR] Source GMO file not found: {sourceGmoPath}", System.Drawing.Color.Red);
+                _logger.WriteLine($"[ERROR] GMO file NOT FOUND at path: {gmoPath}", System.Drawing.Color.Red);
                 return;
             }
 
+            _logger.WriteLine($"[INFO] Found GMO file. Attempting to add variants for {characterName}...");
+
             foreach (var variant in fileVariants)
             {
-                string pacFile = $"{baseFileName}{variant}.pac";
-                string aPacFile = $"{baseFileName}a{variant}.pac";
-                string gmoInsidePac = variant == "" ? $"{baseFileName}.GMO" : $"{baseFileName}{variant}.GMO";
+                string route = $@"model\pack\{baseFileName}{variant}.pac";
+                string virtualPath = Path.GetFileName(route); // e.g. "bc009_c6.pac"
 
-                _logger.WriteLine($"[DEBUG] Processing variant: '{variant}'");
-                _logger.WriteLine($"[DEBUG] Target PAC: {pacFile}, replacing internal GMO: {gmoInsidePac}");
+                _logger.WriteLine($"[INFO] Attempting to add file:");
+                _logger.WriteLine($"       Physical path: {gmoPath}");
+                _logger.WriteLine($"       Route: {route}");
+                _logger.WriteLine($"       Virtual path in pak: {virtualPath}");
 
-                // Try multiple route formats to see what works
-                string[] routesToTry = {
-            $"model\\pack",           // Windows style backslash
-            $"model/pack",            // idfk just do anything i guess
-            $"pack",                 
-            $"data\\model\\pack"     
-        };
-
-                bool addedSuccessfully = false;
-                foreach (string routeToTry in routesToTry)
+                try
                 {
-                    try
-                    {
-                        _logger.WriteLine($"[DEBUG] Trying route: {routeToTry}\\{pacFile}");
-                        pakEmulator.AddFile(sourceGmoPath, $"{routeToTry}\\{pacFile}", gmoInsidePac);
-                        pakEmulator.AddFile(sourceGmoPath, $"{routeToTry}\\{aPacFile}", gmoInsidePac);
-
-                        _logger.WriteLine($"[DEBUG] SUCCESS: Added to route {routeToTry}");
-                        addedSuccessfully = true;
-                        break;
-                    }
-                    catch (Exception ex)
-                    {
-                        _logger.WriteLine($"[DEBUG] Route {routeToTry} failed: {ex.Message}");
-                    }
+                    pakEmulator.AddFile(gmoPath, route, virtualPath);
+                    _logger.WriteLine($"[SUCCESS] Registered {route}", System.Drawing.Color.Green);
                 }
-
-                if (!addedSuccessfully)
+                catch (Exception ex)
                 {
-                    _logger.WriteLine($"[ERROR] Failed to add {pacFile} to any route!", System.Drawing.Color.Red);
+                    _logger.WriteLine($"[ERROR] Failed to register {route}: {ex.Message}", System.Drawing.Color.Red);
                 }
             }
         }
 
 
-        #region Standard Overrides
-        public override void ConfigurationUpdated(Config configuration)
-        {
-            // Apply settings from configuration.
-            // ... your code here.
-            _configuration = configuration;
-            _logger.WriteLine($"[{_modConfig.ModId}] Config Updated: Applying");
-        }
-        #endregion
+
+
+
+
+
 
         #region For Exports, Serialization etc.
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
