@@ -197,6 +197,10 @@ namespace p3ppc.aiocostumes
                     Config.MakotoCostume.OrpheusTelos => "Persona Outfits",
                     Config.MakotoCostume.Thanatos => "Persona Outfits",
                     Config.MakotoCostume.P4AU => "P4AU",
+                    Config.MakotoCostume.Butler => "Butler",
+                    Config.MakotoCostume.Christmas => "Christmas Outfits",
+                    Config.MakotoCostume.Yasogami => "Yasogami High",
+                    Config.MakotoCostume.Shujin => "Shujin",
                     _ => string.Empty
                 };
 
@@ -238,6 +242,9 @@ namespace p3ppc.aiocostumes
                     Config.KotoneCostume.Orpheus => "Persona Outfits",
                     Config.KotoneCostume.OrpheusTelos => "Persona Outfits",
                     Config.KotoneCostume.Thanatos => "Persona Outfits",
+                    Config.KotoneCostume.Christmas => "Christmas Outfits",
+                    Config.KotoneCostume.Yasogami => "Yasogami High",
+                    Config.KotoneCostume.Shujin => "Shujin",
                     _ => string.Empty
                 };
 
@@ -271,6 +278,8 @@ namespace p3ppc.aiocostumes
                     Config.YukariCostume.Q2 => "Q2",
                     Config.YukariCostume.P4AU => "P4AU",
                     Config.YukariCostume.JustAPhase => "Just-A-Phase",
+                    Config.YukariCostume.Yasogami => "Yasogami High",
+                    Config.YukariCostume.Shujin => "Shujin",
                     _ => string.Empty
                 };
 
@@ -302,6 +311,9 @@ namespace p3ppc.aiocostumes
                     Config.JunpeiCostume.Q2 => "Q2",
                     Config.JunpeiCostume.P4AU => "P4AU",
                     Config.JunpeiCostume.JustAPhase => "Just-A-Phase",
+                    Config.JunpeiCostume.Yasogami => "Yasogami High",
+                    Config.JunpeiCostume.Shujin => "Shujin",
+                    Config.JunpeiCostume.Christmas => "Christmas Outfits",
                     _ => string.Empty
                 };
 
@@ -332,6 +344,9 @@ namespace p3ppc.aiocostumes
                     Config.AkihikoCostume.Q2 => "Q2",
                     Config.AkihikoCostume.P4AU => "P4AU",
                     Config.AkihikoCostume.JustAPhase => "Just-A-Phase",
+                    Config.AkihikoCostume.Yasogami => "Yasogami High",
+                    Config.AkihikoCostume.Shujin => "Shujin",
+                    Config.AkihikoCostume.Christmas => "Christmas Outfits",
                     _ => string.Empty
                 };
 
@@ -364,6 +379,8 @@ namespace p3ppc.aiocostumes
                     Config.MitsuruCostume.JustAPhase => "Just-A-Phase",
                     Config.MitsuruCostume.P4AU => "P4AU",
                     Config.MitsuruCostume.P3R => "P3R",
+                    Config.MitsuruCostume.Yasogami => "Yasogami High",
+                    Config.MitsuruCostume.Shujin => "Shujin",
                     _ => string.Empty
                 };
 
@@ -395,6 +412,8 @@ namespace p3ppc.aiocostumes
                     Config.AigisCostume.JustAPhase => "Just-A-Phase",
                     Config.AigisCostume.P4AU => "P4AU",
                     Config.AigisCostume.P3R => "P3R",
+                    Config.AigisCostume.Yasogami => "Yasogami High",
+                    Config.AigisCostume.Shujin => "Shujin",
                     _ => string.Empty
                 };
 
@@ -424,6 +443,9 @@ namespace p3ppc.aiocostumes
                     Config.KenCostume.Q2 => "Q2",
                     Config.KenCostume.JustAPhase => "Just-A-Phase",
                     Config.KenCostume.P4AU => "P4AU",
+                    Config.KenCostume.Yasogami => "Yasogami High",
+                    Config.KenCostume.Shujin => "Shujin",
+                    Config.KenCostume.Christmas => "Christmas Outfits",
                     _ => string.Empty
                 };
 
@@ -452,6 +474,9 @@ namespace p3ppc.aiocostumes
                     Config.ShinjiroCostume.PhantomThief => "Phantom Thieves",
                     Config.ShinjiroCostume.Q2 => "Q2",
                     Config.ShinjiroCostume.JustAPhase => "Just-A-Phase",
+                    Config.ShinjiroCostume.Yasogami => "Yasogami High",
+                    Config.ShinjiroCostume.Shujin => "Shujin",
+                    Config.ShinjiroCostume.Christmas => "Christmas Outfits",
                     _ => string.Empty
                 };
 
@@ -478,6 +503,8 @@ namespace p3ppc.aiocostumes
                     Config.KoromaruCostume.Q2 => "Q2",
                     Config.KoromaruCostume.JustAPhase => "Just-A-Phase",
                     Config.KoromaruCostume.P3R => "P3R",
+                    Config.KoromaruCostume.Yasogami => "Yasogami High",
+                    Config.KoromaruCostume.Shujin => "Shujin",
                     _ => string.Empty
                 };
 
