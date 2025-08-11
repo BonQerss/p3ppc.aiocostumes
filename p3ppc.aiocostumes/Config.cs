@@ -33,8 +33,6 @@ namespace p3ppc.aiocostumes.Configuration
             None,
             [Display(Name = "Joker from Persona 5")]
             PhantomThief,
-            [Display(Name = "Persona 3 Dancing")]
-            Dancing,
             [Display(Name = "Second Form Nahobino")]
             Nahobino,
             [Display(Name = "Persona Q2")]
@@ -325,7 +323,7 @@ namespace p3ppc.aiocostumes.Configuration
             bc007_c5,
             [Display(Name = "Butler Outfit (bc007_c6)")]
             bc007_c6,
-            
+
         }
 
         public enum MitsuruCostumeSlot
@@ -572,6 +570,58 @@ namespace p3ppc.aiocostumes.Configuration
         [DisplayName("Randomize all costumes\nfor Koromaru")]
         [DefaultValue(false)]
         public bool RandomizeKoromaruCostumes { get; set; } = false;
+
+
+        [Category("Code Cracking - All One Word")]
+        [DisplayName("Makoto\nMidnight drifts in,\nthe night is alive,\njoy spins through bodies\ntill the morning light.\nWhat should I do?")]
+        [DefaultValue("IDK")]
+        public string MakotoCostumeCODE { get; set; } = "IDK";
+
+        [Category("Code Cracking - All One Word")]
+        [DisplayName("Kotone\nI could be a woman\nI could be a man\nLook into the mirror,\ntell me what I am?")]
+        [DefaultValue("IDK")]
+        public string KotoneCostumeCODE { get; set; } = "IDK";
+
+        [Category("Code Cracking - All One Word")]
+        [DisplayName("Yukari\nString")]
+        [DefaultValue("IDK")]
+        public string YukariCostumeCODE { get; set; } = "IDK";
+
+        [Category("Code Cracking - All One Word")]
+        [DisplayName("Junpei\nThey want you to\nwatch, to obey, but\nsometimes you just gotta what?")]
+        [DefaultValue("IDK")]
+        public string JunpeiCostumeCODE { get; set; } = "IDK";
+
+        [Category("Code Cracking - All One Word")]
+        [DisplayName("Akihiko\nString")]
+        [DefaultValue("IDK")]
+        public string AkihikoCostumeCODE { get; set; } = "IDK";
+
+        [Category("Code Cracking - All One Word")]
+        [DisplayName("Mitsuru\nI am a\nconversation. I am\nmade of love.\nI am what?")]
+        [DefaultValue("IDK")]
+        public string MitsuruCostumeCODE { get; set; } = "IDK";
+
+        [Category("Code Cracking - All One Word")]
+        [DisplayName("Aigis\nString")]
+        [DefaultValue("IDK")]
+        public string AigisCostumeCODE { get; set; } = "IDK";
+
+        [Category("Code Cracking - All One Word")]
+        [DisplayName("Ken\nString")]
+        [DefaultValue("IDK")]
+        public string KenCostumeCODE { get; set; } = "IDK";
+
+        [Category("Code Cracking - All One Word")]
+        [DisplayName("Shinjiro\nString")]
+        [DefaultValue("IDK")]
+        public string ShinjiroCostumeCODE { get; set; } = "IDK";
+
+        [Category("Code Cracking - All One Word")]
+        [DisplayName("Koromaru\nShe cries her heart\nout, yet she\ncan never get\nenough. I have\na what?")]
+        [DefaultValue("IDK")]
+        public string KoroCostumeCODE { get; set; } = "IDK";
+
     }
 
     /// <summary>

@@ -188,7 +188,6 @@ namespace p3ppc.aiocostumes
                 string costumeFolder = costumeChar1 switch
                 {
                     Config.MakotoCostume.PhantomThief => "Phantom Thieves",
-                    Config.MakotoCostume.Dancing => "Dancing",
                     Config.MakotoCostume.Nahobino => "Nahobino",
                     Config.MakotoCostume.Q2 => "Q2",
                     Config.MakotoCostume.JustAPhase => "Just-A-Phase",
