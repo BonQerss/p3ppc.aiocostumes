@@ -57,6 +57,8 @@ namespace p3ppc.aiocostumes.Configuration
             Butler,
             [Display(Name = "Christmas Outfit")]
             Christmas,
+            [Display(Name = "Secret")]
+            Secret,
         }
 
         public enum KotoneCostume
@@ -239,6 +241,8 @@ namespace p3ppc.aiocostumes.Configuration
             Yasogami,
             [Display(Name = "Shujin Academy")]
             Shujin,
+            [Display(Name = "Secret")]
+            Secret,
         }
 
         public enum MakotoCostumeSlot

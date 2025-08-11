@@ -200,6 +200,7 @@ namespace p3ppc.aiocostumes
                     Config.MakotoCostume.Christmas => "Christmas Outfits",
                     Config.MakotoCostume.Yasogami => "Yasogami High",
                     Config.MakotoCostume.Shujin => "Shujin",
+                    Config.MakotoCostume.Secret when IsSecretCodeValid("Makoto", _configuration.MakotoCostumeCODE) => "Secret",
                     _ => string.Empty
                 };
 
@@ -504,6 +505,7 @@ namespace p3ppc.aiocostumes
                     Config.KoromaruCostume.P3R => "P3R",
                     Config.KoromaruCostume.Yasogami => "Yasogami High",
                     Config.KoromaruCostume.Shujin => "Shujin",
+                    Config.KoromaruCostume.Secret when IsSecretCodeValid("Koromaru", _configuration.KoroCostumeCODE) => "Secret",
                     _ => string.Empty
                 };
 
@@ -528,6 +530,55 @@ namespace p3ppc.aiocostumes
             var values = Enum.GetValues(typeof(T)).Cast<T>().Where(e => !e.ToString().Equals("None")).ToArray();
             return values[rng.Next(values.Length)];
         }
+
+
+        private bool IsSecretCodeValid(string characterName, string input)
+        {
+            if (string.IsNullOrEmpty(input))
+            {
+                _logger.WriteLine($"[SECRET] No secret code entered for {characterName}", System.Drawing.Color.Yellow);
+                return false;
+            }
+
+            if (!SecretCodeHashes.ContainsKey(characterName))
+            {
+                _logger.WriteLine($"[SECRET] No secret code configured for {characterName}", System.Drawing.Color.Yellow);
+                return false;
+            }
+
+            using (var md5 = System.Security.Cryptography.MD5.Create())
+            {
+                byte[] inputBytes = System.Text.Encoding.UTF8.GetBytes(input.ToUpperInvariant());
+                byte[] hashBytes = md5.ComputeHash(inputBytes);
+                string hash = Convert.ToHexString(hashBytes).ToLowerInvariant();
+                bool isValid = hash == SecretCodeHashes[characterName];
+
+                if (isValid)
+                {
+                    _logger.WriteLine($"[SECRET] ✓ Correct secret code for {characterName}! Unlocking secret costume...", System.Drawing.Color.Green);
+                }
+                else
+                {
+                    _logger.WriteLine($"[SECRET] ✗ Incorrect secret code for {characterName}. Try again!", System.Drawing.Color.Red);
+                }
+
+                return isValid;
+            }
+        }
+
+        private static readonly Dictionary<string, string> SecretCodeHashes = new Dictionary<string, string>
+        {
+            ["Makoto"] = "e14ec719bf6dc9c1e8b24e4a33a65550",
+            ["Kotone"] = "5d8a8c8d4c8b2c8e3f4a5b6c7d8e9f0a",     
+            ["Yukari"] = "1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",     
+            ["Junpei"] = "9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c",     
+            ["Akihiko"] = "8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b",    
+            ["Mitsuru"] = "7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a",    
+            ["Aigis"] = "6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a19",      
+            ["Ken"] = "5b4a3f2e1d0c9b8a7f6e5d4c3b2a1908",        
+            ["Shinjiro"] = "4a3f2e1d0c9b8a7f6e5d4c3b2a190817",   
+            ["Koromaru"] = "a280a5d1cf05d38cc46b90410bf0baff"
+        };
 
         private void AddCharacterFiles(IPakEmulator pakEmulator, string modDir, string characterName, string costumeFolder, string baseFileName, string[] fileVariants)
         {
