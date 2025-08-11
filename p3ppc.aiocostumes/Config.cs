@@ -577,7 +577,7 @@ namespace p3ppc.aiocostumes.Configuration
 
 
         [Category("Code Cracking - All One Word")]
-        [DisplayName("Makoto\nMidnight drifts in,\nthe night is alive,\njoy spins through bodies\ntill the morning light.\nWhat should I do?")]
+        [DisplayName("Makoto\nWhen the light is running\nlow and the shadows start to\ngrow and the places that you\nknow seem like what?")]
         [DefaultValue("IDK")]
         public string MakotoCostumeCODE { get; set; } = "IDK";
 

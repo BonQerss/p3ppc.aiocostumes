@@ -1,5 +1,6 @@
 ﻿using p3ppc.aiocostumes.Configuration;
 using p3ppc.aiocostumes.Template;
+using p3ppc.aiocostumes.codes;
 using PAK.Stream.Emulator.Interfaces;
 using Reloaded.Hooks.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
@@ -540,7 +541,7 @@ namespace p3ppc.aiocostumes
                 return false;
             }
 
-            if (!SecretCodeHashes.ContainsKey(characterName))
+            if (!SecretCodeHashes.Hashes.ContainsKey(characterName))
             {
                 _logger.WriteLine($"[SECRET] No secret code configured for {characterName}", System.Drawing.Color.Yellow);
                 return false;
@@ -551,7 +552,7 @@ namespace p3ppc.aiocostumes
                 byte[] inputBytes = System.Text.Encoding.UTF8.GetBytes(input.ToUpperInvariant());
                 byte[] hashBytes = md5.ComputeHash(inputBytes);
                 string hash = Convert.ToHexString(hashBytes).ToLowerInvariant();
-                bool isValid = hash == SecretCodeHashes[characterName];
+                bool isValid = hash == SecretCodeHashes.Hashes[characterName];
 
                 if (isValid)
                 {
@@ -566,19 +567,7 @@ namespace p3ppc.aiocostumes
             }
         }
 
-        private static readonly Dictionary<string, string> SecretCodeHashes = new Dictionary<string, string>
-        {
-            ["Makoto"] = "e14ec719bf6dc9c1e8b24e4a33a65550",
-            ["Kotone"] = "5d8a8c8d4c8b2c8e3f4a5b6c7d8e9f0a",     
-            ["Yukari"] = "1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",     
-            ["Junpei"] = "9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c",     
-            ["Akihiko"] = "8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b",    
-            ["Mitsuru"] = "7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a",    
-            ["Aigis"] = "6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a19",      
-            ["Ken"] = "5b4a3f2e1d0c9b8a7f6e5d4c3b2a1908",        
-            ["Shinjiro"] = "4a3f2e1d0c9b8a7f6e5d4c3b2a190817",   
-            ["Koromaru"] = "a280a5d1cf05d38cc46b90410bf0baff"
-        };
+
 
         private void AddCharacterFiles(IPakEmulator pakEmulator, string modDir, string characterName, string costumeFolder, string baseFileName, string[] fileVariants)
         {
@@ -635,16 +624,6 @@ namespace p3ppc.aiocostumes
                 }
             }
         }
-
-
-
-
-
-
-
-
-
-
 
         #region For Exports, Serialization etc.
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
