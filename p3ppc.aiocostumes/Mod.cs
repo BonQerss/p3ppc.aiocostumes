@@ -202,6 +202,7 @@ namespace p3ppc.aiocostumes
                     Config.MakotoCostume.Yasogami => "Yasogami High",
                     Config.MakotoCostume.Shujin => "Shujin",
                     Config.MakotoCostume.Secret when IsSecretCodeValid("Makoto", _configuration.MakotoCostumeCODE) => "Secret",
+                    Config.MakotoCostume.Ryoji => "Ryoji",
                     _ => string.Empty
                 };
 
@@ -246,6 +247,7 @@ namespace p3ppc.aiocostumes
                     Config.KotoneCostume.Christmas => "Christmas Outfits",
                     Config.KotoneCostume.Yasogami => "Yasogami High",
                     Config.KotoneCostume.Shujin => "Shujin",
+                    Config.KotoneCostume.Ryoji => "Ryoji",
                     _ => string.Empty
                 };
 

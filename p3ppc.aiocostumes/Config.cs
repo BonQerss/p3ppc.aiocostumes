@@ -59,6 +59,8 @@ namespace p3ppc.aiocostumes.Configuration
             Christmas,
             [Display(Name = "Secret")]
             Secret,
+            [Display(Name = "Ryoji")]
+            Ryoji,
         }
 
         public enum KotoneCostume
@@ -87,6 +89,8 @@ namespace p3ppc.aiocostumes.Configuration
             Shujin,
             [Display(Name = "Christmas Outfit")]
             Christmas,
+            [Display(Name = "Ryoji")]
+            Ryoji,
         }
 
         public enum YukariCostume
