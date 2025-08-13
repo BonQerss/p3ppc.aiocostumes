@@ -15,18 +15,27 @@ This will include every costume mod I've published, plus exclusive additions, an
 ## TODOs
 
 Rig, port, and create Velvet Room outfits
+
 Rig, port, and create Featherman outfits
+
 Rig, port, and create female Shujin Academy outfits
+
 Rig, port, and create Santa Makoto outfit
+
 Rig, port, and create Swimsuit Shinjiro outfit
 
+
 Port and create Kotone Joker outfit
+
 Port and create Kotone Violet outfit
+
 Port and create Shinjiro Black Mask outfit
+
 
 Finish porting Santa, Yasogami, and Shujin Academy outfits
 
 Finalize riddles for missing cast
+
 Add riddle outfits to missing characters
 
 Remake various textures in higher quality (P4AU and Just-A-Phase)
