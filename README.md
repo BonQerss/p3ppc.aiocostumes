@@ -6,7 +6,7 @@ P3P sucks with it's costume support, in basically every department. The lack of 
 
 This mod aims to address some of those issues using R2's configuration support to enable more player choice. 
 
-You'll be able to choose the outfit you'd like to use, as well as choose the default outfit it replaces. No longer are you forced to use the High-cut armor outfit during the early game.
+You'll be able to choose the outfit you'd like to use, meaning you're no longer forced to use an entire outfit set at once when using a mod. On top of that, you're also able to choose the default outfit the costume replaces, no longer are you forced to use the High-cut armor outfit during the early game.
 
 Other options include randomization support, enabling a different costume to be chosen on every game boot. As well as a just for fun riddle system, enabling players to unlock outfits outside of the game.
 
