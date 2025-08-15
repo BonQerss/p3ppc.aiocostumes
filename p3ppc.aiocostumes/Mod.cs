@@ -227,11 +227,6 @@ namespace p3ppc.aiocostumes
             }
 
 
-
-
-            // figure out kotone later
-            // currently doesn't bind second phantom thief outfit due to how poorly this is written
-            // probably just need to structure it like how persona outfits are strcutured
             if (costumeChar2 != Config.KotoneCostume.None)
             {
                 string costumeFolder = costumeChar2 switch
@@ -265,12 +260,27 @@ namespace p3ppc.aiocostumes
 
                 if (!string.IsNullOrEmpty(costumeFolder) && variants.Length > 0)
                 {
-                    string name = (costumeChar2 is Config.KotoneCostume.Messiah or Config.KotoneCostume.Orpheus or Config.KotoneCostume.OrpheusTelos or Config.KotoneCostume.Thanatos)
-                        ? Path.Combine("Kotone", costumeChar2.ToString()) : "Kotone";
+                    // Map PhantomThief -> Joker, PhantomThief2 -> Violet
+                    string name = costumeChar2 switch
+                    {
+                        Config.KotoneCostume.PhantomThief2 => Path.Combine("Kotone", "Joker"),
+                        Config.KotoneCostume.PhantomThief => Path.Combine("Kotone", "Violet"),
+
+                        // Persona outfits keep their own subfolder name (e.g., Kotone/Messiah)
+                        Config.KotoneCostume.Messiah
+                        or Config.KotoneCostume.Orpheus
+                        or Config.KotoneCostume.OrpheusTelos
+                        or Config.KotoneCostume.Thanatos => Path.Combine("Kotone", costumeChar2.ToString()),
+
+                        // Everything else just "Kotone"
+                        _ => "Kotone"
+                    };
 
                     AddCharacterFiles(_PakEmulator, modDir, name, costumeFolder, "bc063", variants);
                 }
             }
+
+
 
 
             if (costumeChar3 != Config.YukariCostume.None)
