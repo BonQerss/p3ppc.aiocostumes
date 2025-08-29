@@ -327,6 +327,7 @@ namespace p3ppc.aiocostumes
                     Config.JunpeiCostume.Yasogami => "Yasogami High",
                     Config.JunpeiCostume.Shujin => "Shujin",
                     Config.JunpeiCostume.Christmas => "Christmas Outfits",
+                    Config.JunpeiCostume.Secret when IsSecretCodeValid("Junpei", _configuration.JunpeiCostumeCODE) => "Secret",
                     _ => string.Empty
                 };
 
@@ -490,6 +491,7 @@ namespace p3ppc.aiocostumes
                     Config.ShinjiroCostume.Yasogami => "Yasogami High",
                     Config.ShinjiroCostume.Shujin => "Shujin",
                     Config.ShinjiroCostume.Christmas => "Christmas Outfits",
+                    Config.ShinjiroCostume.Secret when IsSecretCodeValid("Shinjiro", _configuration.ShinjiroCostumeCODE) => "Secret",
                     _ => string.Empty
                 };
 

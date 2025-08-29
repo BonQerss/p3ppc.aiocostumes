@@ -129,6 +129,8 @@ namespace p3ppc.aiocostumes.Configuration
             Shujin,
             [Display(Name = "Christmas Outfit")]
             Christmas,
+            [Display(Name = "Secret")]
+            Secret,
         }
 
         public enum AkihikoCostume
@@ -227,6 +229,8 @@ namespace p3ppc.aiocostumes.Configuration
             Shujin,
             [Display(Name = "Christmas Outfit")]
             Christmas,
+            [Display(Name = "Secret")]
+            Secret,
         }
 
         public enum KoromaruCostume
@@ -621,7 +625,7 @@ namespace p3ppc.aiocostumes.Configuration
         public string KenCostumeCODE { get; set; } = "IDK";
 
         [Category("Code Cracking - All One Word")]
-        [DisplayName("Shinjiro\nString")]
+        [DisplayName("Shinjiro\nMaybe I'm making things\ntoo hard. Tell me\nthat everything's alright,\ncan you what?")]
         [DefaultValue("IDK")]
         public string ShinjiroCostumeCODE { get; set; } = "IDK";
 
