@@ -49,14 +49,14 @@ namespace p3ppc.aiocostumes.Configuration
             Thanatos,
             [Display(Name = "P4AU")]
             P4AU,
-            [Display(Name = "Yasogami High")]
-            Yasogami,
-            [Display(Name = "Shujin Academy")]
-            Shujin,
+            //[Display(Name = "Yasogami High")]
+            //Yasogami,
+            //[Display(Name = "Shujin Academy")]
+            //Shujin,
             [Display(Name = "Butler Suit")]
             Butler,
-            [Display(Name = "Christmas Outfit")]
-            Christmas,
+            //[Display(Name = "Christmas Outfit")]
+            //Christmas,
             [Display(Name = "Secret")]
             Secret,
             [Display(Name = "Ryoji")]
@@ -69,8 +69,8 @@ namespace p3ppc.aiocostumes.Configuration
             None,
             [Display(Name = "Violet from Persona 5 Royal")]
             PhantomThief,
-            [Display(Name = "Joker from Persona 5")]
-            PhantomThief2,
+            //[Display(Name = "Joker from Persona 5")]
+            //PhantomThief2,
             [Display(Name = "Second Form Nahobino")]
             Nahobino,
             [Display(Name = "Persona Q2")]
@@ -85,8 +85,8 @@ namespace p3ppc.aiocostumes.Configuration
             Thanatos,
             [Display(Name = "Yasogami High")]
             Yasogami,
-            [Display(Name = "Shujin Academy")]
-            Shujin,
+            //[Display(Name = "Shujin Academy")]
+            //Shujin,
             [Display(Name = "Christmas Outfit")]
             Christmas,
             [Display(Name = "Ryoji")]
@@ -105,10 +105,10 @@ namespace p3ppc.aiocostumes.Configuration
             P4AU,
             [Display(Name = "Just-A-Phase")]
             JustAPhase,
-            [Display(Name = "Yasogami High")]
-            Yasogami,
-            [Display(Name = "Shujin Academy")]
-            Shujin,
+            //[Display(Name = "Yasogami High")]
+            //Yasogami,
+            //[Display(Name = "Shujin Academy")]
+            //Shujin,
         }
 
         public enum JunpeiCostume
@@ -123,12 +123,12 @@ namespace p3ppc.aiocostumes.Configuration
             P4AU,
             [Display(Name = "Just-A-Phase")]
             JustAPhase,
-            [Display(Name = "Yasogami High")]
-            Yasogami,
-            [Display(Name = "Shujin Academy")]
-            Shujin,
-            [Display(Name = "Christmas Outfit")]
-            Christmas,
+            //[Display(Name = "Yasogami High")]
+            //Yasogami,
+            //[Display(Name = "Shujin Academy")]
+            //Shujin,
+            //[Display(Name = "Christmas Outfit")]
+            //Christmas,
             [Display(Name = "Secret")]
             Secret,
         }
@@ -147,8 +147,8 @@ namespace p3ppc.aiocostumes.Configuration
             JustAPhase,
             [Display(Name = "Yasogami High")]
             Yasogami,
-            [Display(Name = "Shujin Academy")]
-            Shujin,
+            //[Display(Name = "Shujin Academy")]
+            //Shujin,
             [Display(Name = "Christmas Outfit")]
             Christmas,
         }
@@ -167,10 +167,10 @@ namespace p3ppc.aiocostumes.Configuration
             JustAPhase,
             [Display(Name = "P3R SEES Gear")]
             P3R,
-            [Display(Name = "Yasogami High")]
-            Yasogami,
-            [Display(Name = "Shujin Academy")]
-            Shujin,
+            //[Display(Name = "Yasogami High")]
+            //Yasogami,
+            //[Display(Name = "Shujin Academy")]
+            //Shujin,
         }
 
         public enum AigisCostume
@@ -189,8 +189,8 @@ namespace p3ppc.aiocostumes.Configuration
             P3R,
             [Display(Name = "Yasogami High")]
             Yasogami,
-            [Display(Name = "Shujin Academy")]
-            Shujin,
+            //[Display(Name = "Shujin Academy")]
+            //Shujin,
         }
 
         public enum KenCostume
@@ -205,12 +205,12 @@ namespace p3ppc.aiocostumes.Configuration
             P4AU,
             [Display(Name = "Just-A-Phase")]
             JustAPhase,
-            [Display(Name = "Yasogami High")]
-            Yasogami,
-            [Display(Name = "Shujin Academy")]
-            Shujin,
-            [Display(Name = "Christmas Outfit")]
-            Christmas,
+            //[Display(Name = "Yasogami High")]
+            //Yasogami,
+            //[Display(Name = "Shujin Academy")]
+            //Shujin,
+            //[Display(Name = "Christmas Outfit")]
+            //Christmas,
         }
 
         public enum ShinjiroCostume
@@ -223,14 +223,14 @@ namespace p3ppc.aiocostumes.Configuration
             Q2,
             [Display(Name = "Just-A-Phase")]
             JustAPhase,
-            [Display(Name = "Yasogami High")]
-            Yasogami,
-            [Display(Name = "Shujin Academy")]
-            Shujin,
-            [Display(Name = "Christmas Outfit")]
-            Christmas,
-            [Display(Name = "Secret")]
-            Secret,
+            //[Display(Name = "Yasogami High")]
+            //Yasogami,
+            //[Display(Name = "Shujin Academy")]
+            //Shujin,
+            //[Display(Name = "Christmas Outfit")]
+            //Christmas,
+            //[Display(Name = "Secret")]
+            //Secret,
         }
 
         public enum KoromaruCostume
@@ -245,10 +245,10 @@ namespace p3ppc.aiocostumes.Configuration
             JustAPhase,
             [Display(Name = "P3R SEES Gear")]
             P3R,
-            [Display(Name = "Yasogami High")]
-            Yasogami,
-            [Display(Name = "Shujin Academy")]
-            Shujin,
+            //[Display(Name = "Yasogami High")]
+            //Yasogami,
+            //[Display(Name = "Shujin Academy")]
+            //Shujin,
             [Display(Name = "Secret")]
             Secret,
         }

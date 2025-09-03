@@ -198,9 +198,9 @@ namespace p3ppc.aiocostumes
                     Config.MakotoCostume.Thanatos => "Persona Outfits",
                     Config.MakotoCostume.P4AU => "P4AU",
                     Config.MakotoCostume.Butler => "Butler",
-                    Config.MakotoCostume.Christmas => "Christmas Outfits",
-                    Config.MakotoCostume.Yasogami => "Yasogami High",
-                    Config.MakotoCostume.Shujin => "Shujin",
+                    //Config.MakotoCostume.Christmas => "Christmas Outfits",
+                    //Config.MakotoCostume.Yasogami => "Yasogami High",
+                    //Config.MakotoCostume.Shujin => "Shujin",
                     Config.MakotoCostume.Secret when IsSecretCodeValid("Makoto", _configuration.MakotoCostumeCODE) => "Secret",
                     Config.MakotoCostume.Ryoji => "Ryoji",
                     _ => string.Empty
@@ -232,7 +232,7 @@ namespace p3ppc.aiocostumes
                 string costumeFolder = costumeChar2 switch
                 {
                     Config.KotoneCostume.PhantomThief => "Phantom Thieves",
-                    Config.KotoneCostume.PhantomThief2 => "Phantom Thieves",
+                    //Config.KotoneCostume.PhantomThief2 => "Phantom Thieves",
                     Config.KotoneCostume.Nahobino => "Nahobino",
                     Config.KotoneCostume.Q2 => "Q2",
                     Config.KotoneCostume.Messiah => "Persona Outfits",
@@ -241,7 +241,7 @@ namespace p3ppc.aiocostumes
                     Config.KotoneCostume.Thanatos => "Persona Outfits",
                     Config.KotoneCostume.Christmas => "Christmas Outfits",
                     Config.KotoneCostume.Yasogami => "Yasogami High",
-                    Config.KotoneCostume.Shujin => "Shujin",
+                    //Config.KotoneCostume.Shujin => "Shujin",
                     Config.KotoneCostume.Ryoji => "Ryoji",
                     _ => string.Empty
                 };
@@ -263,7 +263,7 @@ namespace p3ppc.aiocostumes
                     // Map PhantomThief -> Joker, PhantomThief2 -> Violet
                     string name = costumeChar2 switch
                     {
-                        Config.KotoneCostume.PhantomThief2 => Path.Combine("Kotone", "Joker"),
+                        //Config.KotoneCostume.PhantomThief2 => Path.Combine("Kotone", "Joker"),
                         Config.KotoneCostume.PhantomThief => Path.Combine("Kotone", "Violet"),
 
                         // Persona outfits keep their own subfolder name (e.g., Kotone/Messiah)
@@ -291,8 +291,8 @@ namespace p3ppc.aiocostumes
                     Config.YukariCostume.Q2 => "Q2",
                     Config.YukariCostume.P4AU => "P4AU",
                     Config.YukariCostume.JustAPhase => "Just-A-Phase",
-                    Config.YukariCostume.Yasogami => "Yasogami High",
-                    Config.YukariCostume.Shujin => "Shujin",
+                    //Config.YukariCostume.Yasogami => "Yasogami High",
+                    //Config.YukariCostume.Shujin => "Shujin",
                     _ => string.Empty
                 };
 
@@ -324,9 +324,9 @@ namespace p3ppc.aiocostumes
                     Config.JunpeiCostume.Q2 => "Q2",
                     Config.JunpeiCostume.P4AU => "P4AU",
                     Config.JunpeiCostume.JustAPhase => "Just-A-Phase",
-                    Config.JunpeiCostume.Yasogami => "Yasogami High",
-                    Config.JunpeiCostume.Shujin => "Shujin",
-                    Config.JunpeiCostume.Christmas => "Christmas Outfits",
+                    //Config.JunpeiCostume.Yasogami => "Yasogami High",
+                    //Config.JunpeiCostume.Shujin => "Shujin",
+                    //Config.JunpeiCostume.Christmas => "Christmas Outfits",
                     Config.JunpeiCostume.Secret when IsSecretCodeValid("Junpei", _configuration.JunpeiCostumeCODE) => "Secret",
                     _ => string.Empty
                 };
@@ -393,8 +393,8 @@ namespace p3ppc.aiocostumes
                     Config.MitsuruCostume.JustAPhase => "Just-A-Phase",
                     Config.MitsuruCostume.P4AU => "P4AU",
                     Config.MitsuruCostume.P3R => "P3R",
-                    Config.MitsuruCostume.Yasogami => "Yasogami High",
-                    Config.MitsuruCostume.Shujin => "Shujin",
+                    //Config.MitsuruCostume.Yasogami => "Yasogami High",
+                    //Config.MitsuruCostume.Shujin => "Shujin",
                     _ => string.Empty
                 };
 
@@ -427,7 +427,7 @@ namespace p3ppc.aiocostumes
                     Config.AigisCostume.P4AU => "P4AU",
                     Config.AigisCostume.P3R => "P3R",
                     Config.AigisCostume.Yasogami => "Yasogami High",
-                    Config.AigisCostume.Shujin => "Shujin",
+                    //Config.AigisCostume.Shujin => "Shujin",
                     _ => string.Empty
                 };
 
@@ -457,9 +457,9 @@ namespace p3ppc.aiocostumes
                     Config.KenCostume.Q2 => "Q2",
                     Config.KenCostume.JustAPhase => "Just-A-Phase",
                     Config.KenCostume.P4AU => "P4AU",
-                    Config.KenCostume.Yasogami => "Yasogami High",
-                    Config.KenCostume.Shujin => "Shujin",
-                    Config.KenCostume.Christmas => "Christmas Outfits",
+                    //Config.KenCostume.Yasogami => "Yasogami High",
+                    //Config.KenCostume.Shujin => "Shujin",
+                    //Config.KenCostume.Christmas => "Christmas Outfits",
                     _ => string.Empty
                 };
 
@@ -488,10 +488,10 @@ namespace p3ppc.aiocostumes
                     Config.ShinjiroCostume.PhantomThief => "Phantom Thieves",
                     Config.ShinjiroCostume.Q2 => "Q2",
                     Config.ShinjiroCostume.JustAPhase => "Just-A-Phase",
-                    Config.ShinjiroCostume.Yasogami => "Yasogami High",
-                    Config.ShinjiroCostume.Shujin => "Shujin",
-                    Config.ShinjiroCostume.Christmas => "Christmas Outfits",
-                    Config.ShinjiroCostume.Secret when IsSecretCodeValid("Shinjiro", _configuration.ShinjiroCostumeCODE) => "Secret",
+                    //Config.ShinjiroCostume.Yasogami => "Yasogami High",
+                    //Config.ShinjiroCostume.Shujin => "Shujin",
+                    //Config.ShinjiroCostume.Christmas => "Christmas Outfits",
+                    //Config.ShinjiroCostume.Secret when IsSecretCodeValid("Shinjiro", _configuration.ShinjiroCostumeCODE) => "Secret",
                     _ => string.Empty
                 };
 
@@ -518,8 +518,8 @@ namespace p3ppc.aiocostumes
                     Config.KoromaruCostume.Q2 => "Q2",
                     Config.KoromaruCostume.JustAPhase => "Just-A-Phase",
                     Config.KoromaruCostume.P3R => "P3R",
-                    Config.KoromaruCostume.Yasogami => "Yasogami High",
-                    Config.KoromaruCostume.Shujin => "Shujin",
+                    //Config.KoromaruCostume.Yasogami => "Yasogami High",
+                    //Config.KoromaruCostume.Shujin => "Shujin",
                     Config.KoromaruCostume.Secret when IsSecretCodeValid("Koromaru", _configuration.KoroCostumeCODE) => "Secret",
                     _ => string.Empty
                 };
