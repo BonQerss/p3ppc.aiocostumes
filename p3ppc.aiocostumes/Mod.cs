@@ -195,14 +195,17 @@ namespace p3ppc.aiocostumes
                     Config.MakotoCostume.Messiah => "Persona Outfits",
                     Config.MakotoCostume.Orpheus => "Persona Outfits",
                     Config.MakotoCostume.OrpheusTelos => "Persona Outfits",
-                    Config.MakotoCostume.Thanatos => "Persona Outfits",
+                    //Config.MakotoCostume.Thanatos => "Persona Outfits",
                     Config.MakotoCostume.P4AU => "P4AU",
+                    Config.MakotoCostume.P3R => "P3R",
                     Config.MakotoCostume.Butler => "Butler",
                     //Config.MakotoCostume.Christmas => "Christmas Outfits",
-                    //Config.MakotoCostume.Yasogami => "Yasogami High",
+                    Config.MakotoCostume.Yasogami => "Yasogami High",
+                    Config.MakotoCostume.Summer => "Summer Uniforms",
+                    Config.MakotoCostume.Answer => "Answer",
                     //Config.MakotoCostume.Shujin => "Shujin",
                     Config.MakotoCostume.Secret when IsSecretCodeValid("Makoto", _configuration.MakotoCostumeCODE) => "Secret",
-                    Config.MakotoCostume.Ryoji => "Ryoji",
+                    //Config.MakotoCostume.Ryoji => "Ryoji",
                     _ => string.Empty
                 };
 
@@ -214,12 +217,13 @@ namespace p3ppc.aiocostumes
                     Config.MakotoCostumeSlot.bc001_c2 => new[] { "_c2" },
                     Config.MakotoCostumeSlot.bc001_c5 => new[] { "_c5" },
                     Config.MakotoCostumeSlot.bc001_c9 => new[] { "_c9" },
+                    Config.MakotoCostumeSlot.ALL => new[] { "", "_c0", "_c1", "_c2", "_c5", "_c9" },
                     _ => new[] { "" }
                 };
 
                 if (!string.IsNullOrEmpty(costumeFolder) && variants.Length > 0)
                 {
-                    string name = (costumeChar1 is Config.MakotoCostume.Messiah or Config.MakotoCostume.Orpheus or Config.MakotoCostume.OrpheusTelos or Config.MakotoCostume.Thanatos)
+                    string name = (costumeChar1 is Config.MakotoCostume.Messiah or Config.MakotoCostume.Orpheus or Config.MakotoCostume.OrpheusTelos)
                         ? Path.Combine("Makoto", costumeChar1.ToString()) : "Makoto";
 
                     AddCharacterFiles(_PakEmulator, modDir, name, costumeFolder, "bc001", variants);
@@ -232,17 +236,18 @@ namespace p3ppc.aiocostumes
                 string costumeFolder = costumeChar2 switch
                 {
                     Config.KotoneCostume.PhantomThief => "Phantom Thieves",
-                    //Config.KotoneCostume.PhantomThief2 => "Phantom Thieves",
+                    Config.KotoneCostume.PhantomThief2 => "Phantom Thieves",
                     Config.KotoneCostume.Nahobino => "Nahobino",
                     Config.KotoneCostume.Q2 => "Q2",
                     Config.KotoneCostume.Messiah => "Persona Outfits",
                     Config.KotoneCostume.Orpheus => "Persona Outfits",
                     Config.KotoneCostume.OrpheusTelos => "Persona Outfits",
-                    Config.KotoneCostume.Thanatos => "Persona Outfits",
+                    //Config.KotoneCostume.Thanatos => "Persona Outfits",
                     Config.KotoneCostume.Christmas => "Christmas Outfits",
                     Config.KotoneCostume.Yasogami => "Yasogami High",
+                    Config.KotoneCostume.Answer => "Answer",
                     //Config.KotoneCostume.Shujin => "Shujin",
-                    Config.KotoneCostume.Ryoji => "Ryoji",
+                    //Config.KotoneCostume.Ryoji => "Ryoji",
                     _ => string.Empty
                 };
 
@@ -255,6 +260,7 @@ namespace p3ppc.aiocostumes
                     Config.KotoneCostumeSlot.bc063_c3 => new[] { "_c3" },
                     Config.KotoneCostumeSlot.bc063_c5 => new[] { "_c5" },
                     Config.KotoneCostumeSlot.bc063_c9 => new[] { "_c9" },
+                    Config.KotoneCostumeSlot.ALL => new[] { "", "_c0", "_c1", "_c2", "_c3", "_c5", "_c9" },
                     _ => new[] { "" }
                 };
 
@@ -263,14 +269,13 @@ namespace p3ppc.aiocostumes
                     // Map PhantomThief -> Joker, PhantomThief2 -> Violet
                     string name = costumeChar2 switch
                     {
-                        //Config.KotoneCostume.PhantomThief2 => Path.Combine("Kotone", "Joker"),
+                        Config.KotoneCostume.PhantomThief2 => Path.Combine("Kotone", "Joker"),
                         Config.KotoneCostume.PhantomThief => Path.Combine("Kotone", "Violet"),
 
                         // Persona outfits keep their own subfolder name (e.g., Kotone/Messiah)
                         Config.KotoneCostume.Messiah
                         or Config.KotoneCostume.Orpheus
-                        or Config.KotoneCostume.OrpheusTelos
-                        or Config.KotoneCostume.Thanatos => Path.Combine("Kotone", costumeChar2.ToString()),
+                        or Config.KotoneCostume.OrpheusTelos => Path.Combine("Kotone", costumeChar2.ToString()),
 
                         // Everything else just "Kotone"
                         _ => "Kotone"
@@ -291,6 +296,7 @@ namespace p3ppc.aiocostumes
                     Config.YukariCostume.Q2 => "Q2",
                     Config.YukariCostume.P4AU => "P4AU",
                     Config.YukariCostume.JustAPhase => "Just-A-Phase",
+                    Config.YukariCostume.Summer => "Summer Uniforms",
                     //Config.YukariCostume.Yasogami => "Yasogami High",
                     //Config.YukariCostume.Shujin => "Shujin",
                     _ => string.Empty
@@ -305,6 +311,7 @@ namespace p3ppc.aiocostumes
                     Config.YukariCostumeSlot.bc002_c3 => new[] { "_c3" },
                     Config.YukariCostumeSlot.bc002_c5 => new[] { "_c5" },
                     Config.YukariCostumeSlot.bc002_c6 => new[] { "_c6" },
+                    Config.YukariCostumeSlot.ALL => new[] { "", "_c0", "_c1", "_c2", "_c5", "_c6" },
                     _ => new[] { "" } // default to base pac
                 };
 
@@ -324,6 +331,8 @@ namespace p3ppc.aiocostumes
                     Config.JunpeiCostume.Q2 => "Q2",
                     Config.JunpeiCostume.P4AU => "P4AU",
                     Config.JunpeiCostume.JustAPhase => "Just-A-Phase",
+                    Config.JunpeiCostume.Summer => "Summer Uniforms",
+                    Config.JunpeiCostume.P3R => "P3R",
                     //Config.JunpeiCostume.Yasogami => "Yasogami High",
                     //Config.JunpeiCostume.Shujin => "Shujin",
                     //Config.JunpeiCostume.Christmas => "Christmas Outfits",
@@ -339,6 +348,7 @@ namespace p3ppc.aiocostumes
                     Config.JunpeiCostumeSlot.bc005_c2 => new[] { "_c2" },
                     Config.JunpeiCostumeSlot.bc005_c5 => new[] { "_c5" },
                     Config.JunpeiCostumeSlot.bc005_c6 => new[] { "_c6" },
+                    Config.JunpeiCostumeSlot.ALL => new[] { "", "_c0", "_c1", "_c2", "_c5", "_c6" },
                     _ => new[] { "" } // default to base pac
                 };
 
@@ -357,9 +367,12 @@ namespace p3ppc.aiocostumes
                     Config.AkihikoCostume.PhantomThief => "Phantom Thieves",
                     Config.AkihikoCostume.Q2 => "Q2",
                     Config.AkihikoCostume.P4AU => "P4AU",
+                    Config.AkihikoCostume.P3R => "P3R",
                     Config.AkihikoCostume.JustAPhase => "Just-A-Phase",
                     Config.AkihikoCostume.Yasogami => "Yasogami High",
-                    Config.AkihikoCostume.Shujin => "Shujin",
+                    Config.AkihikoCostume.Summer => "Summer Uniforms",
+                    Config.AkihikoCostume.Answer => "Answer",
+                    //Config.AkihikoCostume.Shujin => "Shujin",
                     Config.AkihikoCostume.Christmas => "Christmas Outfits",
                     _ => string.Empty
                 };
@@ -372,6 +385,7 @@ namespace p3ppc.aiocostumes
                     Config.AkihikoCostumeSlot.bc007_c2 => new[] { "_c2" },
                     Config.AkihikoCostumeSlot.bc007_c5 => new[] { "_c5" },
                     Config.AkihikoCostumeSlot.bc007_c6 => new[] { "_c6" },
+                    Config.AkihikoCostumeSlot.ALL => new[] { "", "_c0", "_c1", "_c2", "_c5", "_c6" },
                     _ => new[] { "" } // default to base pac
                 };
 
@@ -393,6 +407,8 @@ namespace p3ppc.aiocostumes
                     Config.MitsuruCostume.JustAPhase => "Just-A-Phase",
                     Config.MitsuruCostume.P4AU => "P4AU",
                     Config.MitsuruCostume.P3R => "P3R",
+                    Config.MitsuruCostume.Summer => "Summer Uniforms",
+                    Config.MitsuruCostume.Answer => "Answer",
                     //Config.MitsuruCostume.Yasogami => "Yasogami High",
                     //Config.MitsuruCostume.Shujin => "Shujin",
                     _ => string.Empty
@@ -407,6 +423,7 @@ namespace p3ppc.aiocostumes
                     Config.MitsuruCostumeSlot.bc004_c3 => new[] { "_c3" },
                     Config.MitsuruCostumeSlot.bc004_c5 => new[] { "_c5" },
                     Config.MitsuruCostumeSlot.bc004_c6 => new[] { "_c6" },
+                    Config.MitsuruCostumeSlot.ALL => new[] { "", "_c0", "_c1", "_c2", "_c3", "_c5", "_c6" },
                     _ => new[] { "" } // default to base pac
                 };
 
@@ -427,7 +444,9 @@ namespace p3ppc.aiocostumes
                     Config.AigisCostume.P4AU => "P4AU",
                     Config.AigisCostume.P3R => "P3R",
                     Config.AigisCostume.Yasogami => "Yasogami High",
+                    Config.AigisCostume.Answer => "Answer",
                     //Config.AigisCostume.Shujin => "Shujin",
+                    Config.AigisCostume.Velvet => "Velvet Room",
                     _ => string.Empty
                 };
 
@@ -438,6 +457,7 @@ namespace p3ppc.aiocostumes
                     Config.AigisCostumeSlot.bc003_c3 => new[] { "_c3" },
                     Config.AigisCostumeSlot.bc003_c4 => new[] { "_c4" },
                     Config.AigisCostumeSlot.bc003_c6 => new[] { "_c6" },
+                    Config.AigisCostumeSlot.ALL => new[] { "", "_c0", "_c3", "_c4", "_c6" },
                     _ => new[] { "" } // default to base pac
                 };
 
@@ -457,6 +477,7 @@ namespace p3ppc.aiocostumes
                     Config.KenCostume.Q2 => "Q2",
                     Config.KenCostume.JustAPhase => "Just-A-Phase",
                     Config.KenCostume.P4AU => "P4AU",
+                    Config.KenCostume.Summer => "Summer Uniforms",
                     //Config.KenCostume.Yasogami => "Yasogami High",
                     //Config.KenCostume.Shujin => "Shujin",
                     //Config.KenCostume.Christmas => "Christmas Outfits",
@@ -470,6 +491,7 @@ namespace p3ppc.aiocostumes
                     Config.KenCostumeSlot.bc008_c2 => new[] { "_c2" },
                     Config.KenCostumeSlot.bc008_c5 => new[] { "_c5" },
                     Config.KenCostumeSlot.bc008_c6 => new[] { "_c6" },
+                    Config.KenCostumeSlot.ALL => new[] { "", "_c1", "_c2", "_c5", "_c6" },
                     _ => new[] { "" } // default to base pac
                 };
 
@@ -488,10 +510,12 @@ namespace p3ppc.aiocostumes
                     Config.ShinjiroCostume.PhantomThief => "Phantom Thieves",
                     Config.ShinjiroCostume.Q2 => "Q2",
                     Config.ShinjiroCostume.JustAPhase => "Just-A-Phase",
+                    Config.ShinjiroCostume.Answer => "Answer",
+                    Config.ShinjiroCostume.P3R => "P3R",
                     //Config.ShinjiroCostume.Yasogami => "Yasogami High",
                     //Config.ShinjiroCostume.Shujin => "Shujin",
                     //Config.ShinjiroCostume.Christmas => "Christmas Outfits",
-                    //Config.ShinjiroCostume.Secret when IsSecretCodeValid("Shinjiro", _configuration.ShinjiroCostumeCODE) => "Secret",
+                    Config.ShinjiroCostume.Secret when IsSecretCodeValid("Shinjiro", _configuration.ShinjiroCostumeCODE) => "Secret",
                     _ => string.Empty
                 };
 
@@ -500,6 +524,7 @@ namespace p3ppc.aiocostumes
                     Config.ShinjiroCostumeSlot.bc009 => new[] { "" },
                     Config.ShinjiroCostumeSlot.bc009_c5 => new[] { "_c5" },
                     Config.ShinjiroCostumeSlot.bc009_c6 => new[] { "_c6" },
+                    Config.ShinjiroCostumeSlot.ALL => new[] { "", "_c5", "_c6" },
                     _ => Array.Empty<string>()
                 };
 
@@ -528,6 +553,7 @@ namespace p3ppc.aiocostumes
                 {
                     Config.KoromaruCostumeSlot.bc00A => new[] { "" },
                     Config.KoromaruCostumeSlot.bc00A_c6 => new[] { "_c6" },
+                    Config.KoromaruCostumeSlot.ALL => new[] { "", "_c6" },
                     _ => Array.Empty<string>()
                 };
 

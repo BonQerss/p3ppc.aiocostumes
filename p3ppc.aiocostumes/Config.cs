@@ -45,12 +45,14 @@ namespace p3ppc.aiocostumes.Configuration
             Orpheus,
             [Display(Name = "Orpheus Telos")]
             OrpheusTelos,
-            [Display(Name = "Thanatos")]
-            Thanatos,
+            //[Display(Name = "Thanatos")]
+            //Thanatos,
             [Display(Name = "P4AU")]
             P4AU,
-            //[Display(Name = "Yasogami High")]
-            //Yasogami,
+            [Display(Name = "P3R SEES Gear")]
+            P3R,
+            [Display(Name = "Yasogami High")]
+            Yasogami,
             //[Display(Name = "Shujin Academy")]
             //Shujin,
             [Display(Name = "Butler Suit")]
@@ -59,8 +61,12 @@ namespace p3ppc.aiocostumes.Configuration
             //Christmas,
             [Display(Name = "Secret")]
             Secret,
-            [Display(Name = "Ryoji")]
-            Ryoji,
+            //[Display(Name = "Ryoji")]
+            //Ryoji,
+            [Display(Name = "Summer School Uniform")]
+            Summer,
+            [Display(Name = "The Answer - Shadow Protag")]
+            Answer,
         }
 
         public enum KotoneCostume
@@ -69,8 +75,8 @@ namespace p3ppc.aiocostumes.Configuration
             None,
             [Display(Name = "Violet from Persona 5 Royal")]
             PhantomThief,
-            //[Display(Name = "Joker from Persona 5")]
-            //PhantomThief2,
+            [Display(Name = "Joker from Persona 5")]
+            PhantomThief2,
             [Display(Name = "Second Form Nahobino")]
             Nahobino,
             [Display(Name = "Persona Q2")]
@@ -81,16 +87,18 @@ namespace p3ppc.aiocostumes.Configuration
             Orpheus,
             [Display(Name = "Orpheus Telos")]
             OrpheusTelos,
-            [Display(Name = "Thanatos")]
-            Thanatos,
+            //[Display(Name = "Thanatos")]
+            //Thanatos,
             [Display(Name = "Yasogami High")]
             Yasogami,
             //[Display(Name = "Shujin Academy")]
             //Shujin,
             [Display(Name = "Christmas Outfit")]
             Christmas,
-            [Display(Name = "Ryoji")]
-            Ryoji,
+            //[Display(Name = "Ryoji")]
+            //Ryoji,
+            [Display(Name = "The Answer - Shadow Protag")]
+            Answer,
         }
 
         public enum YukariCostume
@@ -109,6 +117,8 @@ namespace p3ppc.aiocostumes.Configuration
             //Yasogami,
             //[Display(Name = "Shujin Academy")]
             //Shujin,
+            [Display(Name = "Summer School Uniform")]
+            Summer,
         }
 
         public enum JunpeiCostume
@@ -123,6 +133,8 @@ namespace p3ppc.aiocostumes.Configuration
             P4AU,
             [Display(Name = "Just-A-Phase")]
             JustAPhase,
+            [Display(Name = "P3R SEES Gear")]
+            P3R,
             //[Display(Name = "Yasogami High")]
             //Yasogami,
             //[Display(Name = "Shujin Academy")]
@@ -131,6 +143,8 @@ namespace p3ppc.aiocostumes.Configuration
             //Christmas,
             [Display(Name = "Secret")]
             Secret,
+            [Display(Name = "Summer School Uniform")]
+            Summer,
         }
 
         public enum AkihikoCostume
@@ -147,10 +161,16 @@ namespace p3ppc.aiocostumes.Configuration
             JustAPhase,
             [Display(Name = "Yasogami High")]
             Yasogami,
+            [Display(Name = "P3R SEES Gear")]
+            P3R,
             //[Display(Name = "Shujin Academy")]
             //Shujin,
             [Display(Name = "Christmas Outfit")]
             Christmas,
+            [Display(Name = "Summer School Uniform")]
+            Summer,
+            [Display(Name = "The Answer - Young Akihiko")]
+            Answer,
         }
 
         public enum MitsuruCostume
@@ -171,6 +191,10 @@ namespace p3ppc.aiocostumes.Configuration
             //Yasogami,
             //[Display(Name = "Shujin Academy")]
             //Shujin,
+            [Display(Name = "Summer School Uniform")]
+            Summer,
+            [Display(Name = "The Answer - Young Mitsuru")]
+            Answer,
         }
 
         public enum AigisCostume
@@ -191,6 +215,10 @@ namespace p3ppc.aiocostumes.Configuration
             Yasogami,
             //[Display(Name = "Shujin Academy")]
             //Shujin,
+            [Display(Name = "Velvet Room")]
+            Velvet,
+            [Display(Name = "The Answer - Aigis")]
+            Answer,
         }
 
         public enum KenCostume
@@ -211,6 +239,8 @@ namespace p3ppc.aiocostumes.Configuration
             //Shujin,
             //[Display(Name = "Christmas Outfit")]
             //Christmas,
+            [Display(Name = "Summer School Uniform")]
+            Summer,
         }
 
         public enum ShinjiroCostume
@@ -223,14 +253,18 @@ namespace p3ppc.aiocostumes.Configuration
             Q2,
             [Display(Name = "Just-A-Phase")]
             JustAPhase,
+            [Display(Name = "P3R SEES Gear")]
+            P3R,
             //[Display(Name = "Yasogami High")]
             //Yasogami,
             //[Display(Name = "Shujin Academy")]
             //Shujin,
             //[Display(Name = "Christmas Outfit")]
             //Christmas,
-            //[Display(Name = "Secret")]
-            //Secret,
+            [Display(Name = "Secret")]
+            Secret,
+            [Display(Name = "The Answer - Metis")]
+            Answer,
         }
 
         public enum KoromaruCostume
@@ -267,6 +301,8 @@ namespace p3ppc.aiocostumes.Configuration
             bc001_c5,
             [Display(Name = "Winter Uniform (no sees) (bc001_c9)")]
             bc001_c9,
+            [Display(Name = "All Costumes and Outfits replaced")]
+            ALL,
         }
 
         public enum KotoneCostumeSlot
@@ -285,6 +321,8 @@ namespace p3ppc.aiocostumes.Configuration
             bc063_c5,
             [Display(Name = "Winter Uniform (no sees) (bc063_c9)")]
             bc063_c9,
+            [Display(Name = "All Costumes and Outfits replaced")]
+            ALL,
         }
 
         public enum YukariCostumeSlot
@@ -303,6 +341,8 @@ namespace p3ppc.aiocostumes.Configuration
             bc002_c5,
             [Display(Name = "Christmas Outfit (bc002_c6)")]
             bc002_c6,
+            [Display(Name = "All Costumes and Outfits replaced")]
+            ALL,
         }
 
         public enum JunpeiCostumeSlot
@@ -318,7 +358,9 @@ namespace p3ppc.aiocostumes.Configuration
             [Display(Name = "Shirt of Chivalry (bc005_c5)")]
             bc005_c5,
             [Display(Name = "Butler Outfit (bc005_c6)")]
-            bc005_c6,
+            bc005_c6,  
+            [Display(Name = "All Costumes and Outfits replaced")]
+            ALL,
         }
 
         public enum AkihikoCostumeSlot
@@ -335,6 +377,8 @@ namespace p3ppc.aiocostumes.Configuration
             bc007_c5,
             [Display(Name = "Butler Outfit (bc007_c6)")]
             bc007_c6,
+            [Display(Name = "All Costumes and Outfits replaced")]
+            ALL,
 
         }
 
@@ -354,6 +398,8 @@ namespace p3ppc.aiocostumes.Configuration
             bc004_c5,
             [Display(Name = "Christmas Outfit (bc004_c6)")]
             bc004_c6,
+            [Display(Name = "All Costumes and Outfits replaced")]
+            ALL,
         }
 
         public enum AigisCostumeSlot
@@ -368,6 +414,8 @@ namespace p3ppc.aiocostumes.Configuration
             bc003_c4,
             [Display(Name = "Christmas Outfit (bc003_c6)")]
             bc003_c6,
+            [Display(Name = "All Costumes and Outfits replaced")]
+            ALL,
         }
 
         public enum KenCostumeSlot
@@ -382,6 +430,8 @@ namespace p3ppc.aiocostumes.Configuration
             bc008_c5,
             [Display(Name = "Butler Outfit (bc008_c6)")]
             bc008_c6,
+            [Display(Name = "All Costumes and Outfits replaced")]
+            ALL,
         }
 
         public enum ShinjiroCostumeSlot
@@ -392,6 +442,8 @@ namespace p3ppc.aiocostumes.Configuration
             bc009_c5,
             [Display(Name = "Butler Outfit (bc009_c6)")]
             bc009_c6,
+            [Display(Name = "All Costumes and Outfits replaced")]
+            ALL,
         }
 
         public enum KoromaruCostumeSlot
@@ -400,6 +452,8 @@ namespace p3ppc.aiocostumes.Configuration
             bc00A,
             [Display(Name = "Butler Outfit (bc00A_c6)")]
             bc00A_c6,
+            [Display(Name = "All Costumes and Outfits replaced")]
+            ALL,
         }
 
         // Makoto Configuration
@@ -584,52 +638,52 @@ namespace p3ppc.aiocostumes.Configuration
         public bool RandomizeKoromaruCostumes { get; set; } = false;
 
 
-        [Category("Code Cracking - All One Word")]
-        [DisplayName("Makoto\nWhen the light is running\nlow and the shadows start to\ngrow and the places that you\nknow seem like what?")]
+        [Category("Code Cracking - All One Word - All Caps")]
+        [DisplayName("Makoto\nString")]
         [DefaultValue("IDK")]
         public string MakotoCostumeCODE { get; set; } = "IDK";
 
-        [Category("Code Cracking - All One Word")]
-        [DisplayName("Kotone\nI could be a woman\nI could be a man\nLook into the mirror,\ntell me what I am?")]
+        [Category("Code Cracking - All One Word - All Caps")]
+        [DisplayName("Kotone\nString")]
         [DefaultValue("IDK")]
         public string KotoneCostumeCODE { get; set; } = "IDK";
 
-        [Category("Code Cracking - All One Word")]
+        [Category("Code Cracking - All One Word - All Caps")]
         [DisplayName("Yukari\nString")]
         [DefaultValue("IDK")]
         public string YukariCostumeCODE { get; set; } = "IDK";
 
-        [Category("Code Cracking - All One Word")]
+        [Category("Code Cracking - All One Word - All Caps")]
         [DisplayName("Junpei\nThey want you to\nwatch, to obey, but\nsometimes you just gotta what?")]
         [DefaultValue("IDK")]
         public string JunpeiCostumeCODE { get; set; } = "IDK";
 
-        [Category("Code Cracking - All One Word")]
+        [Category("Code Cracking - All One Word - All Caps")]
         [DisplayName("Akihiko\nString")]
         [DefaultValue("IDK")]
         public string AkihikoCostumeCODE { get; set; } = "IDK";
 
-        [Category("Code Cracking - All One Word")]
-        [DisplayName("Mitsuru\nI am a\nconversation. I am\nmade of love.\nI am what?")]
+        [Category("Code Cracking - All One Word - All Caps")]
+        [DisplayName("Mitsuru\nString")]
         [DefaultValue("IDK")]
         public string MitsuruCostumeCODE { get; set; } = "IDK";
 
-        [Category("Code Cracking - All One Word")]
+        [Category("Code Cracking - All One Word - All Caps")]
         [DisplayName("Aigis\nString")]
         [DefaultValue("IDK")]
         public string AigisCostumeCODE { get; set; } = "IDK";
 
-        [Category("Code Cracking - All One Word")]
+        [Category("Code Cracking - All One Word - All Caps")]
         [DisplayName("Ken\nString")]
         [DefaultValue("IDK")]
         public string KenCostumeCODE { get; set; } = "IDK";
 
-        [Category("Code Cracking - All One Word")]
+        [Category("Code Cracking - All One Word - All Caps")]
         [DisplayName("Shinjiro\nMaybe I'm making things\ntoo hard. Tell me\nthat everything's alright,\ncan you what?")]
         [DefaultValue("IDK")]
         public string ShinjiroCostumeCODE { get; set; } = "IDK";
 
-        [Category("Code Cracking - All One Word")]
+        [Category("Code Cracking - All One Word - All Caps")]
         [DisplayName("Koromaru\nShe cries her heart\nout, yet she\ncan never get\nenough. I have\na what?")]
         [DefaultValue("IDK")]
         public string KoroCostumeCODE { get; set; } = "IDK";
